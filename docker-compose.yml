@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: tictactoe-postgres
+    environment:
+      POSTGRES_USER: ${DB_USER:-tictactoe}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-tictactoe123}
+      POSTGRES_DB: ${DB_NAME:-tictactoe}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-tictactoe}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - tictactoe-network
+
+volumes:
+  postgres_data:
+
+networks:
+  tictactoe-network:
+    driver: bridge
