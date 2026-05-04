@@ -24,16 +24,16 @@
 
 ## 3. Backend - Database Layer
 
-- [ ] 3.1 Implement database connection pool with PostgreSQL
-- [ ] 3.2 Create internal/storage/user_repository.go for user CRUD operations
-- [ ] 3.3 Create internal/storage/game_repository.go for game CRUD operations
-- [ ] 3.4 Implement user creation with unique email/username constraints
-- [ ] 3.5 Implement user retrieval by email and by ID
-- [ ] 3.6 Implement game creation and state persistence
-- [ ] 3.7 Implement game move recording in game_moves table
-- [ ] 3.8 Implement user statistics updates (wins, losses, draws)
-- [ ] 3.9 Implement game history retrieval for user
-- [ ] 3.10 Add database query logging
+- [x] 3.1 Implement database connection pool with PostgreSQL
+- [x] 3.2 Create internal/storage/user_repository.go for user CRUD operations
+- [x] 3.3 Create internal/storage/game_repository.go for game CRUD operations
+- [x] 3.4 Implement user creation with unique email/username constraints
+- [x] 3.5 Implement user retrieval by email and by ID
+- [x] 3.6 Implement game creation and state persistence
+- [x] 3.7 Implement game move recording in game_moves table
+- [x] 3.8 Implement user statistics updates (wins, losses, draws)
+- [x] 3.9 Implement game history retrieval for user
+- [x] 3.10 Add database query logging
 
 ## 4. Backend - Authentication
 
