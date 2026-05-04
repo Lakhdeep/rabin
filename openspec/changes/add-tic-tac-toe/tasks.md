@@ -15,12 +15,12 @@
 
 ## 2. Backend - Project Structure
 
-- [ ] 2.1 Create cmd/server/main.go as application entry point
-- [ ] 2.2 Create internal/storage/database.go for database connection
-- [ ] 2.3 Create internal/storage/migrations.go for migration runner
-- [ ] 2.4 Create pkg/config/config.go for environment configuration
-- [ ] 2.5 Create pkg/logger/logger.go for structured logging
-- [ ] 2.6 Set up backend directory structure (api/v1, auth, game, user packages)
+- [x] 2.1 Create cmd/server/main.go as application entry point
+- [x] 2.2 Create internal/storage/database.go for database connection
+- [x] 2.3 Create internal/storage/migrations.go for migration runner
+- [x] 2.4 Create pkg/config/config.go for environment configuration
+- [x] 2.5 Create pkg/logger/logger.go for structured logging
+- [x] 2.6 Set up backend directory structure (api/v1, auth, game, user packages)
 
 ## 3. Backend - Database Layer
 
