@@ -37,18 +37,18 @@
 
 ## 4. Backend - Authentication
 
-- [ ] 4.1 Create internal/auth/password.go with bcrypt hashing (cost 12)
-- [ ] 4.2 Create internal/auth/jwt.go for token generation and validation
-- [ ] 4.3 Implement JWT token generation with HS256 algorithm
-- [ ] 4.4 Implement JWT token validation function
-- [ ] 4.5 Create internal/auth/middleware.go for JWT middleware
-- [ ] 4.6 Implement middleware to extract user from token
-- [ ] 4.7 Create internal/user/models.go with User struct
-- [ ] 4.8 Create internal/user/validation.go for email, username, password validation
-- [ ] 4.9 Implement registration validation logic (email format, username length, password strength)
-- [ ] 4.10 Write unit tests for password hashing and verification
-- [ ] 4.11 Write unit tests for JWT generation and validation
-- [ ] 4.12 Write unit tests for input validation functions
+- [x] 4.1 Create internal/auth/password.go with bcrypt hashing (cost 12)
+- [x] 4.2 Create internal/auth/jwt.go for token generation and validation
+- [x] 4.3 Implement JWT token generation with HS256 algorithm
+- [x] 4.4 Implement JWT token validation function
+- [x] 4.5 Create internal/auth/middleware.go for JWT middleware
+- [x] 4.6 Implement middleware to extract user from token
+- [x] 4.7 Create internal/user/models.go with User struct
+- [x] 4.8 Create internal/user/validation.go for email, username, password validation
+- [x] 4.9 Implement registration validation logic (email format, username length, password strength)
+- [x] 4.10 Write unit tests for password hashing and verification
+- [x] 4.11 Write unit tests for JWT generation and validation
+- [x] 4.12 Write unit tests for input validation functions
 
 ## 5. Backend - Authentication API
 
