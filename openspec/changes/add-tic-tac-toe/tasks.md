@@ -52,16 +52,16 @@
 
 ## 5. Backend - Authentication API
 
-- [ ] 5.1 Create internal/api/v1/auth_handler.go
-- [ ] 5.2 Implement POST /api/v1/auth/register handler
-- [ ] 5.3 Implement POST /api/v1/auth/login handler
-- [ ] 5.4 Implement GET /api/v1/auth/me handler (protected)
-- [ ] 5.5 Add error handling for duplicate email/username
-- [ ] 5.6 Add error handling for invalid credentials
-- [ ] 5.7 Return appropriate HTTP status codes (201, 400, 401)
-- [ ] 5.8 Write integration tests for registration endpoint
-- [ ] 5.9 Write integration tests for login endpoint
-- [ ] 5.10 Write integration tests for get current user endpoint
+- [x] 5.1 Create internal/api/v1/auth_handler.go
+- [x] 5.2 Implement POST /api/v1/auth/register handler
+- [x] 5.3 Implement POST /api/v1/auth/login handler
+- [x] 5.4 Implement GET /api/v1/auth/me handler (protected)
+- [x] 5.5 Add error handling for duplicate email/username
+- [x] 5.6 Add error handling for invalid credentials
+- [x] 5.7 Return appropriate HTTP status codes (201, 400, 401)
+- [x] 5.8 Write integration tests for registration endpoint
+- [x] 5.9 Write integration tests for login endpoint
+- [x] 5.10 Write integration tests for get current user endpoint
 
 ## 6. Backend - Game Logic
 
@@ -122,17 +122,17 @@
 
 ## 10. Backend - Server Setup
 
-- [ ] 10.1 Create Gin router in main.go
-- [ ] 10.2 Register all /api/v1/auth routes
-- [ ] 10.3 Register all /api/v1/games routes with JWT middleware
-- [ ] 10.4 Register all /api/v1/users routes
-- [ ] 10.5 Add CORS middleware (allow all origins in dev, configurable for prod)
-- [ ] 10.6 Add request logging middleware
-- [ ] 10.7 Add request timeout middleware (30 seconds)
-- [ ] 10.8 Create GET /api/v1/health endpoint with database check
-- [ ] 10.9 Implement graceful shutdown on SIGINT/SIGTERM
-- [ ] 10.10 Add panic recovery middleware
-- [ ] 10.11 Test server starts and connects to database
+- [x] 10.1 Create Gin router in main.go
+- [x] 10.2 Register all /api/v1/auth routes
+- [x] 10.3 Register all /api/v1/games routes with JWT middleware
+- [x] 10.4 Register all /api/v1/users routes
+- [x] 10.5 Add CORS middleware (allow all origins in dev, configurable for prod)
+- [x] 10.6 Add request logging middleware
+- [x] 10.7 Add request timeout middleware (30 seconds)
+- [x] 10.8 Create GET /api/v1/health endpoint with database check
+- [x] 10.9 Implement graceful shutdown on SIGINT/SIGTERM
+- [x] 10.10 Add panic recovery middleware
+- [x] 10.11 Test server starts and connects to database
 
 ## 11. Backend - Docker
 
