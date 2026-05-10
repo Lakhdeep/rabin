@@ -112,12 +112,12 @@
 
 ## 9. Backend - User Statistics API
 
-- [ ] 9.1 Create internal/api/v1/user_handler.go
-- [ ] 9.2 Implement GET /api/v1/users/:id/stats handler
-- [ ] 9.3 Calculate and return win_rate (wins / total_games)
-- [ ] 9.4 Handle division by zero for users with no games
-- [ ] 9.5 Make endpoint public (no authentication required)
-- [ ] 9.6 Add error handling for user not found
+- [x] 9.1 Create internal/api/v1/user_handler.go
+- [x] 9.2 Implement GET /api/v1/users/:id/stats handler
+- [x] 9.3 Calculate and return win_rate (wins / total_games)
+- [x] 9.4 Handle division by zero for users with no games
+- [x] 9.5 Make endpoint public (no authentication required)
+- [x] 9.6 Add error handling for user not found
 - [ ] 9.7 Write integration tests for user stats endpoint
 
 ## 10. Backend - Server Setup
@@ -136,18 +136,18 @@
 
 ## 11. Backend - Docker
 
-- [ ] 11.1 Create backend/Dockerfile with multi-stage build
-- [ ] 11.2 First stage: build Go binary with golang:1.21-alpine
-- [ ] 11.3 Second stage: runtime with alpine:latest
-- [ ] 11.4 Copy binary and expose port 8080
-- [ ] 11.5 Update docker-compose.yml to include backend service
-- [ ] 11.6 Configure backend environment variables in docker-compose
-- [ ] 11.7 Add depends_on for postgres service
-- [ ] 11.8 Add health check using /api/v1/health endpoint
-- [ ] 11.9 Set restart policy to unless-stopped
-- [ ] 11.10 Test backend container builds and starts
-- [ ] 11.11 Verify backend connects to postgres container
-- [ ] 11.12 Test migrations run on container startup
+- [x] 11.1 Create backend/Dockerfile with multi-stage build
+- [x] 11.2 First stage: build Go binary with golang:1.21-alpine
+- [x] 11.3 Second stage: runtime with alpine:latest
+- [x] 11.4 Copy binary and expose port 8080
+- [x] 11.5 Update docker-compose.yml to include backend service
+- [x] 11.6 Configure backend environment variables in docker-compose
+- [x] 11.7 Add depends_on for postgres service
+- [x] 11.8 Add health check using /api/v1/health endpoint
+- [x] 11.9 Set restart policy to unless-stopped
+- [x] 11.10 Test backend container builds and starts
+- [x] 11.11 Verify backend connects to postgres container
+- [x] 11.12 Test migrations run on container startup
 
 ## 12. Frontend - Project Setup
 
