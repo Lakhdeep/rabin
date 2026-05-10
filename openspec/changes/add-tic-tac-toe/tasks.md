@@ -65,47 +65,47 @@
 
 ## 6. Backend - Game Logic
 
-- [ ] 6.1 Create internal/game/board.go with board representation
-- [ ] 6.2 Implement board initialization (empty 3x3 grid)
-- [ ] 6.3 Implement move validation (position empty, in range, game not ended)
-- [ ] 6.4 Implement win condition detection (rows, columns, diagonals)
-- [ ] 6.5 Implement draw condition detection (board full, no winner)
-- [ ] 6.6 Create internal/game/models.go with Game struct
-- [ ] 6.7 Implement turn management (X starts, alternating turns)
-- [ ] 6.8 Implement game state transitions (active, won, lost, draw)
-- [ ] 6.9 Write unit tests for board initialization
-- [ ] 6.10 Write unit tests for move validation
-- [ ] 6.11 Write unit tests for win detection (all 8 winning positions)
-- [ ] 6.12 Write unit tests for draw detection
+- [x] 6.1 Create internal/game/board.go with board representation
+- [x] 6.2 Implement board initialization (empty 3x3 grid)
+- [x] 6.3 Implement move validation (position empty, in range, game not ended)
+- [x] 6.4 Implement win condition detection (rows, columns, diagonals)
+- [x] 6.5 Implement draw condition detection (board full, no winner)
+- [x] 6.6 Create internal/game/models.go with Game struct
+- [x] 6.7 Implement turn management (X starts, alternating turns)
+- [x] 6.8 Implement game state transitions (active, won, lost, draw)
+- [x] 6.9 Write unit tests for board initialization
+- [x] 6.10 Write unit tests for move validation
+- [x] 6.11 Write unit tests for win detection (all 8 winning positions)
+- [x] 6.12 Write unit tests for draw detection
 
 ## 7. Backend - AI Implementation
 
-- [ ] 7.1 Create internal/game/ai/ai.go with AIStrategy interface
-- [ ] 7.2 Implement EasyAI struct with random move selection
-- [ ] 7.3 Implement MediumAI struct with mixed strategy (50% minimax, 50% random)
-- [ ] 7.4 Implement minimax algorithm with alpha-beta pruning
-- [ ] 7.5 Implement HardAI struct with depth-limited minimax (depth=4)
-- [ ] 7.6 Implement ImpossibleAI struct with full minimax
-- [ ] 7.7 Create AI factory function to return AI by difficulty string
-- [ ] 7.8 Add timeout protection for AI calculations (1 second max)
-- [ ] 7.9 Write unit tests for EasyAI (verifies random but valid moves)
-- [ ] 7.10 Write unit tests for minimax algorithm correctness
-- [ ] 7.11 Write unit tests for ImpossibleAI (verify unbeatable)
-- [ ] 7.12 Write performance tests for AI response time
+- [x] 7.1 Create internal/game/ai/ai.go with AIStrategy interface
+- [x] 7.2 Implement EasyAI struct with random move selection
+- [x] 7.3 Implement MediumAI struct with mixed strategy (50% minimax, 50% random)
+- [x] 7.4 Implement minimax algorithm with alpha-beta pruning
+- [x] 7.5 Implement HardAI struct with depth-limited minimax (depth=4)
+- [x] 7.6 Implement ImpossibleAI struct with full minimax
+- [x] 7.7 Create AI factory function to return AI by difficulty string
+- [x] 7.8 Add timeout protection for AI calculations (1 second max)
+- [x] 7.9 Write unit tests for EasyAI (verifies random but valid moves)
+- [x] 7.10 Write unit tests for minimax algorithm correctness
+- [x] 7.11 Write unit tests for ImpossibleAI (verify unbeatable)
+- [x] 7.12 Write performance tests for AI response time
 
 ## 8. Backend - Game API
 
-- [ ] 8.1 Create internal/api/v1/game_handler.go
-- [ ] 8.2 Implement POST /api/v1/games handler (create game with difficulty)
-- [ ] 8.3 Implement GET /api/v1/games/:id handler (get game state)
-- [ ] 8.4 Implement POST /api/v1/games/:id/move handler (make move)
-- [ ] 8.5 Implement GET /api/v1/games handler (list user's games)
-- [ ] 8.6 Add game ownership validation (user can only access their games)
-- [ ] 8.7 Implement AI move calculation and response in move handler
-- [ ] 8.8 Update user statistics when game ends (atomic transaction)
-- [ ] 8.9 Return updated board state and game result in response
-- [ ] 8.10 Add error handling for invalid moves (occupied position, wrong turn)
-- [ ] 8.11 Add error handling for invalid difficulty
+- [x] 8.1 Create internal/api/v1/game_handler.go
+- [x] 8.2 Implement POST /api/v1/games handler (create game with difficulty)
+- [x] 8.3 Implement GET /api/v1/games/:id handler (get game state)
+- [x] 8.4 Implement POST /api/v1/games/:id/move handler (make move)
+- [x] 8.5 Implement GET /api/v1/games handler (list user's games)
+- [x] 8.6 Add game ownership validation (user can only access their games)
+- [x] 8.7 Implement AI move calculation and response in move handler
+- [x] 8.8 Update user statistics when game ends (atomic transaction)
+- [x] 8.9 Return updated board state and game result in response
+- [x] 8.10 Add error handling for invalid moves (occupied position, wrong turn)
+- [x] 8.11 Add error handling for invalid difficulty
 - [ ] 8.12 Write integration tests for create game endpoint
 - [ ] 8.13 Write integration tests for make move endpoint
 - [ ] 8.14 Write integration tests for game completion and score updates
