@@ -184,12 +184,12 @@
 
 ## 15. Frontend - Routing
 
-- [ ] 15.1 Create src/App.jsx with BrowserRouter
-- [ ] 15.2 Set up routes for /login, /register, /dashboard, /game, /profile
-- [ ] 15.3 Create src/components/ProtectedRoute.jsx wrapper
-- [ ] 15.4 Implement redirect to /login for unauthenticated users
-- [ ] 15.5 Implement redirect to /dashboard for authenticated users on /login
-- [ ] 15.6 Set default route (/) to redirect based on auth status
+- [x] 15.1 Create src/App.jsx with BrowserRouter
+- [x] 15.2 Set up routes for /login, /register, /dashboard, /game, /profile
+- [x] 15.3 Create src/components/ProtectedRoute.jsx wrapper
+- [x] 15.4 Implement redirect to /login for unauthenticated users
+- [x] 15.5 Implement redirect to /dashboard for authenticated users on /login
+- [x] 15.6 Set default route (/) to redirect based on auth status
 
 ## 16. Frontend - Registration Page
 
