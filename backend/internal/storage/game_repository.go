@@ -113,7 +113,7 @@ func (r *GameRepository) Update(game *Game) error {
 }
 
 // ListByUserID retrieves all games for a user
-func (r *GameRepository) ListByUserID(userID int) ([]*Game, error) {
+func (r *GameRepository) ListByUserID(userID int) ([]Game, error) {
 	query := `
 		SELECT id, user_id, difficulty, result, board_state, current_turn, created_at, completed_at
 		FROM games
@@ -127,9 +127,9 @@ func (r *GameRepository) ListByUserID(userID int) ([]*Game, error) {
 	}
 	defer rows.Close()
 
-	var games []*Game
+	var games []Game
 	for rows.Next() {
-		game := &Game{}
+		var game Game
 		err := rows.Scan(
 			&game.ID,
 			&game.UserID,
@@ -169,7 +169,7 @@ func (r *GameRepository) AddMove(gameID, position int, player string, moveNumber
 }
 
 // GetMoves retrieves all moves for a game
-func (r *GameRepository) GetMoves(gameID int) ([]*GameMove, error) {
+func (r *GameRepository) GetMoves(gameID int) ([]GameMove, error) {
 	query := `
 		SELECT id, game_id, position, player, move_number, created_at
 		FROM game_moves
@@ -183,9 +183,9 @@ func (r *GameRepository) GetMoves(gameID int) ([]*GameMove, error) {
 	}
 	defer rows.Close()
 
-	var moves []*GameMove
+	var moves []GameMove
 	for rows.Next() {
-		move := &GameMove{}
+		var move GameMove
 		err := rows.Scan(
 			&move.ID,
 			&move.GameID,

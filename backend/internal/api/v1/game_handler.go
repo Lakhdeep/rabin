@@ -15,12 +15,12 @@ import (
 
 // GameHandler handles game-related requests
 type GameHandler struct {
-	gameRepo *storage.GameRepository
+	gameRepo storage.GameRepositoryInterface
 	userRepo storage.UserRepositoryInterface
 }
 
 // NewGameHandler creates a new game handler
-func NewGameHandler(gameRepo *storage.GameRepository, userRepo storage.UserRepositoryInterface) *GameHandler {
+func NewGameHandler(gameRepo storage.GameRepositoryInterface, userRepo storage.UserRepositoryInterface) *GameHandler {
 	return &GameHandler{
 		gameRepo: gameRepo,
 		userRepo: userRepo,
@@ -34,7 +34,7 @@ type CreateGameRequest struct {
 
 // MakeMoveRequest represents a request to make a move
 type MakeMoveRequest struct {
-	Position int `json:"position" binding:"required"`
+	Position int `json:"position" binding:"min=0,max=8"`
 }
 
 // CreateGame handles game creation
@@ -387,7 +387,8 @@ func (h *GameHandler) ListGames(c *gin.Context) {
 	}
 
 	response := make([]gin.H, 0, len(games))
-	for _, dbGame := range games {
+	for i := range games {
+		dbGame := &games[i]
 		gameData := gin.H{
 			"id":         dbGame.ID,
 			"difficulty": dbGame.Difficulty,

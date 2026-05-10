@@ -6,11 +6,11 @@ import (
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
+	"strconv"
 	"testing"
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/rabin/tictactoe/internal/auth"
 	"github.com/rabin/tictactoe/internal/game"
 	"github.com/rabin/tictactoe/internal/storage"
 )
@@ -269,8 +269,10 @@ func TestMakeMove(t *testing.T) {
 			authenticated:  true,
 			expectedStatus: http.StatusBadRequest,
 			checkResponse: func(t *testing.T, resp map[string]interface{}) {
-				if resp["code"] != "INVALID_MOVE" {
-					t.Error("Expected INVALID_MOVE code")
+				// Position validation is handled by binding, which returns INVALID_REQUEST
+				code, _ := resp["code"].(string)
+				if code != "INVALID_REQUEST" && code != "INVALID_MOVE" {
+					t.Errorf("Expected INVALID_REQUEST or INVALID_MOVE code, got %s", code)
 				}
 			},
 		},
@@ -380,7 +382,7 @@ func TestMakeMove(t *testing.T) {
 
 			// Create request
 			body, _ := json.Marshal(tt.requestBody)
-			req, _ := http.NewRequest(http.MethodPost, "/games/"+string(rune(gameID+48))+"/move", bytes.NewBuffer(body))
+			req, _ := http.NewRequest(http.MethodPost, "/games/"+strconv.Itoa(gameID)+"/move", bytes.NewBuffer(body))
 			req.Header.Set("Content-Type", "application/json")
 
 			// Execute
@@ -437,7 +439,7 @@ func TestGameCompletionAndScoreUpdates(t *testing.T) {
 
 	// Make winning move
 	body, _ := json.Marshal(map[string]int{"position": 2})
-	req, _ := http.NewRequest(http.MethodPost, "/games/"+string(rune(g.ID+48))+"/move", bytes.NewBuffer(body))
+	req, _ := http.NewRequest(http.MethodPost, "/games/"+strconv.Itoa(g.ID)+"/move", bytes.NewBuffer(body))
 	req.Header.Set("Content-Type", "application/json")
 
 	w := httptest.NewRecorder()

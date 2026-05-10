@@ -70,6 +70,21 @@ func (m *mockUserRepo) Delete(id int) error {
 }
 
 func (m *mockUserRepo) UpdateStatistics(userID int, result string) error {
+	user, err := m.GetByID(userID)
+	if err != nil {
+		return err
+	}
+
+	user.TotalGames++
+	switch result {
+	case "win":
+		user.Wins++
+	case "loss":
+		user.Losses++
+	case "draw":
+		user.Draws++
+	}
+
 	return nil
 }
 
