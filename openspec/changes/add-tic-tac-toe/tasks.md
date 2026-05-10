@@ -193,29 +193,29 @@
 
 ## 16. Frontend - Registration Page
 
-- [ ] 16.1 Create src/pages/Register.jsx component
-- [ ] 16.2 Create form with email, username, password inputs
-- [ ] 16.3 Add form validation (email format, username length, password strength)
-- [ ] 16.4 Implement real-time validation feedback
-- [ ] 16.5 Add password strength indicator
-- [ ] 16.6 Implement form submission handler
-- [ ] 16.7 Display loading state during registration
-- [ ] 16.8 Display error messages from API (duplicate email/username)
-- [ ] 16.9 Redirect to login page on success with success message
-- [ ] 16.10 Add link to login page for existing users
-- [ ] 16.11 Style registration form with CSS
+- [x] 16.1 Create src/pages/Register.jsx component
+- [x] 16.2 Create form with email, username, password inputs
+- [x] 16.3 Add form validation (email format, username length, password strength)
+- [x] 16.4 Implement real-time validation feedback
+- [x] 16.5 Add password strength indicator
+- [x] 16.6 Implement form submission handler
+- [x] 16.7 Display loading state during registration
+- [x] 16.8 Display error messages from API (duplicate email/username)
+- [x] 16.9 Redirect to login page on success with success message
+- [x] 16.10 Add link to login page for existing users
+- [x] 16.11 Style registration form with CSS
 
 ## 17. Frontend - Login Page
 
-- [ ] 17.1 Create src/pages/Login.jsx component
-- [ ] 17.2 Create form with email and password inputs
-- [ ] 17.3 Add form validation (required fields)
-- [ ] 17.4 Implement form submission handler
-- [ ] 17.5 Display loading state during login
-- [ ] 17.6 Display error message for invalid credentials
-- [ ] 17.7 Redirect to dashboard on successful login
-- [ ] 17.8 Add link to registration page for new users
-- [ ] 17.9 Style login form with CSS
+- [x] 17.1 Create src/pages/Login.jsx component
+- [x] 17.2 Create form with email and password inputs
+- [x] 17.3 Add form validation (required fields)
+- [x] 17.4 Implement form submission handler
+- [x] 17.5 Display loading state during login
+- [x] 17.6 Display error message for invalid credentials
+- [x] 17.7 Redirect to dashboard on successful login
+- [x] 17.8 Add link to registration page for new users
+- [x] 17.9 Style login form with CSS
 
 ## 18. Frontend - Navigation
 

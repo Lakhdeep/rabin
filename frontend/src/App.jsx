@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 // Placeholder components - to be implemented
-const Login = () => <div>Login Page (To be implemented)</div>;
-const Register = () => <div>Register Page (To be implemented)</div>;
 const Dashboard = () => <div>Dashboard Page (To be implemented)</div>;
 const Game = () => <div>Game Page (To be implemented)</div>;
 const Profile = () => <div>Profile Page (To be implemented)</div>;
