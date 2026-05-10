@@ -219,13 +219,13 @@
 
 ## 18. Frontend - Navigation
 
-- [ ] 18.1 Create src/components/Navigation.jsx component
-- [ ] 18.2 Add navigation links (Dashboard, New Game, Profile, Logout)
-- [ ] 18.3 Show navigation only when user is authenticated
-- [ ] 18.4 Highlight current page in navigation
-- [ ] 18.5 Implement logout button handler
-- [ ] 18.6 Style navigation bar with CSS
-- [ ] 18.7 Make navigation responsive for mobile
+- [x] 18.1 Create src/components/Navigation.jsx component
+- [x] 18.2 Add navigation links (Dashboard, New Game, Profile, Logout)
+- [x] 18.3 Show navigation only when user is authenticated
+- [x] 18.4 Highlight current page in navigation
+- [x] 18.5 Implement logout button handler
+- [x] 18.6 Style navigation bar with CSS
+- [x] 18.7 Make navigation responsive for mobile
 
 ## 19. Frontend - Dashboard Page
 
