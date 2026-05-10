@@ -151,36 +151,36 @@
 
 ## 12. Frontend - Project Setup
 
-- [ ] 12.1 Configure Vite with React and TypeScript (or JavaScript)
-- [ ] 12.2 Install react-router-dom for routing
-- [ ] 12.3 Install axios for API requests
-- [ ] 12.4 Set up environment variable support (.env files)
-- [ ] 12.5 Configure API base URL from environment variable
-- [ ] 12.6 Create frontend/src/index.css with global styles
-- [ ] 12.7 Set up CSS reset or normalize.css
+- [x] 12.1 Configure Vite with React and TypeScript (or JavaScript)
+- [x] 12.2 Install react-router-dom for routing
+- [x] 12.3 Install axios for API requests
+- [x] 12.4 Set up environment variable support (.env files)
+- [x] 12.5 Configure API base URL from environment variable
+- [x] 12.6 Create frontend/src/index.css with global styles
+- [x] 12.7 Set up CSS reset or normalize.css
 
 ## 13. Frontend - API Client
 
-- [ ] 13.1 Create src/services/api.js with axios instance
-- [ ] 13.2 Configure base URL from environment variable
-- [ ] 13.3 Add request interceptor to include JWT token from localStorage
-- [ ] 13.4 Add response interceptor for error handling (401, 500)
-- [ ] 13.5 Create src/services/auth.js with register, login functions
-- [ ] 13.6 Create src/services/game.js with game API functions
-- [ ] 13.7 Create src/services/user.js with user stats functions
-- [ ] 13.8 Implement token storage helpers (save, get, clear from localStorage)
+- [x] 13.1 Create src/services/api.js with axios instance
+- [x] 13.2 Configure base URL from environment variable
+- [x] 13.3 Add request interceptor to include JWT token from localStorage
+- [x] 13.4 Add response interceptor for error handling (401, 500)
+- [x] 13.5 Create src/services/auth.js with register, login functions
+- [x] 13.6 Create src/services/game.js with game API functions
+- [x] 13.7 Create src/services/user.js with user stats functions
+- [x] 13.8 Implement token storage helpers (save, get, clear from localStorage)
 
 ## 14. Frontend - Authentication Context
 
-- [ ] 14.1 Create src/context/AuthContext.jsx
-- [ ] 14.2 Implement AuthProvider with user state
-- [ ] 14.3 Implement login function (call API, store token, update state)
-- [ ] 14.4 Implement logout function (clear token, clear state)
-- [ ] 14.5 Implement register function
-- [ ] 14.6 Add loading state for auth operations
-- [ ] 14.7 Add error state for auth errors
-- [ ] 14.8 Implement useAuth custom hook for accessing context
-- [ ] 14.9 Check for existing token on app load
+- [x] 14.1 Create src/context/AuthContext.jsx
+- [x] 14.2 Implement AuthProvider with user state
+- [x] 14.3 Implement login function (call API, store token, update state)
+- [x] 14.4 Implement logout function (clear token, clear state)
+- [x] 14.5 Implement register function
+- [x] 14.6 Add loading state for auth operations
+- [x] 14.7 Add error state for auth errors
+- [x] 14.8 Implement useAuth custom hook for accessing context
+- [x] 14.9 Check for existing token on app load
 
 ## 15. Frontend - Routing
 
