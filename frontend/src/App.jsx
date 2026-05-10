@@ -1,14 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { ErrorProvider } from './context/ErrorContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navigation from './components/Navigation';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Game from './pages/Game';
-
-// Placeholder components - to be implemented
-const Profile = () => <div>Profile Page (To be implemented)</div>;
+import Profile from './pages/Profile';
 
 // Root redirect component
 const RootRedirect = () => {
@@ -126,9 +125,11 @@ function AppRoutes() {
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <AppRoutes />
-      </AuthProvider>
+      <ErrorProvider>
+        <AuthProvider>
+          <AppRoutes />
+        </AuthProvider>
+      </ErrorProvider>
     </BrowserRouter>
   );
 }

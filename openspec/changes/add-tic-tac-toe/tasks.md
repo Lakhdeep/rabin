@@ -106,9 +106,9 @@
 - [x] 8.9 Return updated board state and game result in response
 - [x] 8.10 Add error handling for invalid moves (occupied position, wrong turn)
 - [x] 8.11 Add error handling for invalid difficulty
-- [ ] 8.12 Write integration tests for create game endpoint
-- [ ] 8.13 Write integration tests for make move endpoint
-- [ ] 8.14 Write integration tests for game completion and score updates
+- [x] 8.12 Write integration tests for create game endpoint
+- [x] 8.13 Write integration tests for make move endpoint
+- [x] 8.14 Write integration tests for game completion and score updates
 
 ## 9. Backend - User Statistics API
 
@@ -118,7 +118,7 @@
 - [x] 9.4 Handle division by zero for users with no games
 - [x] 9.5 Make endpoint public (no authentication required)
 - [x] 9.6 Add error handling for user not found
-- [ ] 9.7 Write integration tests for user stats endpoint
+- [x] 9.7 Write integration tests for user stats endpoint
 
 ## 10. Backend - Server Setup
 
@@ -281,27 +281,27 @@
 
 ## 23. Frontend - Profile Page
 
-- [ ] 23.1 Create src/pages/Profile.jsx component
-- [ ] 23.2 Fetch and display user profile information
-- [ ] 23.3 Display email, username, account creation date
-- [ ] 23.4 Display detailed statistics (total games, W/L/D, win rate)
-- [ ] 23.5 Fetch and display complete game history
-- [ ] 23.6 Group game history by date or show chronologically
-- [ ] 23.7 Add filtering or sorting options for game history
-- [ ] 23.8 Add loading state while fetching data
-- [ ] 23.9 Handle errors gracefully
-- [ ] 23.10 Style profile page with sections
+- [x] 23.1 Create src/pages/Profile.jsx component
+- [x] 23.2 Fetch and display user profile information
+- [x] 23.3 Display email, username, account creation date
+- [x] 23.4 Display detailed statistics (total games, W/L/D, win rate)
+- [x] 23.5 Fetch and display complete game history
+- [x] 23.6 Group game history by date or show chronologically
+- [x] 23.7 Add filtering or sorting options for game history
+- [x] 23.8 Add loading state while fetching data
+- [x] 23.9 Handle errors gracefully
+- [x] 23.10 Style profile page with sections
 
 ## 24. Frontend - Error Handling
 
-- [ ] 24.1 Create src/components/ErrorToast.jsx component
-- [ ] 24.2 Implement toast notification system
-- [ ] 24.3 Show error toasts for API failures
-- [ ] 24.4 Auto-dismiss toasts after 5 seconds
-- [ ] 24.5 Allow manual dismissal of toasts
-- [ ] 24.6 Display specific error messages from API
-- [ ] 24.7 Show generic error for unexpected failures
-- [ ] 24.8 Style error toast with appropriate colors
+- [x] 24.1 Create src/components/ErrorToast.jsx component
+- [x] 24.2 Implement toast notification system
+- [x] 24.3 Show error toasts for API failures
+- [x] 24.4 Auto-dismiss toasts after 5 seconds
+- [x] 24.5 Allow manual dismissal of toasts
+- [x] 24.6 Display specific error messages from API
+- [x] 24.7 Show generic error for unexpected failures
+- [x] 24.8 Style error toast with appropriate colors
 
 ## 25. Frontend - Loading States
 
