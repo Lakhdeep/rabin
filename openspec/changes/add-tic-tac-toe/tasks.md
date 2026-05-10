@@ -305,12 +305,12 @@
 
 ## 25. Frontend - Loading States
 
-- [ ] 25.1 Create src/components/Spinner.jsx component
-- [ ] 25.2 Show spinner during API requests
-- [ ] 25.3 Disable form inputs during submission
-- [ ] 25.4 Disable game board during AI turn
-- [ ] 25.5 Show skeleton loaders for dashboard statistics
-- [ ] 25.6 Style loading spinner
+- [x] 25.1 Create src/components/Spinner.jsx component
+- [x] 25.2 Show spinner during API requests
+- [x] 25.3 Disable form inputs during submission
+- [x] 25.4 Disable game board during AI turn
+- [x] 25.5 Show skeleton loaders for dashboard statistics
+- [x] 25.6 Style loading spinner
 
 ## 26. Frontend - Responsive Design
 
