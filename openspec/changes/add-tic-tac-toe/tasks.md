@@ -336,18 +336,18 @@
 
 ## 28. Frontend - Docker
 
-- [ ] 28.1 Create frontend/Dockerfile with multi-stage build
-- [ ] 28.2 First stage: build React app with node:18-alpine
-- [ ] 28.3 Second stage: serve with nginx:alpine
-- [ ] 28.4 Copy build output to nginx html directory
-- [ ] 28.5 Create nginx.conf for SPA routing (fallback to index.html)
-- [ ] 28.6 Update docker-compose.yml to include frontend service
-- [ ] 28.7 Expose port 80 and map to host
-- [ ] 28.8 Configure API_URL environment variable
-- [ ] 28.9 Set restart policy to unless-stopped
-- [ ] 28.10 Test frontend container builds and starts
-- [ ] 28.11 Verify frontend can communicate with backend container
-- [ ] 28.12 Test SPA routing works (refresh on /dashboard doesn't 404)
+- [x] 28.1 Create frontend/Dockerfile with multi-stage build
+- [x] 28.2 First stage: build React app with node:18-alpine
+- [x] 28.3 Second stage: serve with nginx:alpine
+- [x] 28.4 Copy build output to nginx html directory
+- [x] 28.5 Create nginx.conf for SPA routing (fallback to index.html)
+- [x] 28.6 Update docker-compose.yml to include frontend service
+- [x] 28.7 Expose port 80 and map to host
+- [x] 28.8 Configure API_URL environment variable
+- [x] 28.9 Set restart policy to unless-stopped
+- [x] 28.10 Test frontend container builds and starts
+- [x] 28.11 Verify frontend can communicate with backend container
+- [x] 28.12 Test SPA routing works (refresh on /dashboard doesn't 404)
 
 ## 29. Integration Testing
 
