@@ -4,9 +4,9 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Navigation from './components/Navigation';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
 
 // Placeholder components - to be implemented
-const Dashboard = () => <div>Dashboard Page (To be implemented)</div>;
 const Game = () => <div>Game Page (To be implemented)</div>;
 const Profile = () => <div>Profile Page (To be implemented)</div>;
 

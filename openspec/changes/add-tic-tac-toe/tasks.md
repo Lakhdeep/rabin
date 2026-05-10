@@ -229,16 +229,16 @@
 
 ## 19. Frontend - Dashboard Page
 
-- [ ] 19.1 Create src/pages/Dashboard.jsx component
-- [ ] 19.2 Fetch and display user statistics on mount
-- [ ] 19.3 Display total_games, wins, losses, draws
-- [ ] 19.4 Calculate and display win rate as percentage
-- [ ] 19.5 Add prominent "New Game" button
-- [ ] 19.6 Fetch and display recent games list
-- [ ] 19.7 Show game result, difficulty, and timestamp for each game
-- [ ] 19.8 Add loading state while fetching data
-- [ ] 19.9 Handle errors when fetching statistics
-- [ ] 19.10 Style dashboard with card layout
+- [x] 19.1 Create src/pages/Dashboard.jsx component
+- [x] 19.2 Fetch and display user statistics on mount
+- [x] 19.3 Display total_games, wins, losses, draws
+- [x] 19.4 Calculate and display win rate as percentage
+- [x] 19.5 Add prominent "New Game" button
+- [x] 19.6 Fetch and display recent games list
+- [x] 19.7 Show game result, difficulty, and timestamp for each game
+- [x] 19.8 Add loading state while fetching data
+- [x] 19.9 Handle errors when fetching statistics
+- [x] 19.10 Style dashboard with card layout
 
 ## 20. Frontend - Game Context
 
