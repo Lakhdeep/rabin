@@ -5,9 +5,9 @@ import Navigation from './components/Navigation';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import Game from './pages/Game';
 
 // Placeholder components - to be implemented
-const Game = () => <div>Game Page (To be implemented)</div>;
 const Profile = () => <div>Profile Page (To be implemented)</div>;
 
 // Root redirect component

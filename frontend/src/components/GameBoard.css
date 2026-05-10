@@ -1,0 +1,133 @@
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--bg-light);
+  border-radius: 0.5rem;
+}
+
+.cell {
+  aspect-ratio: 1;
+  background-color: var(--bg-white);
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+}
+
+.cell:not(.occupied):not(.disabled):hover {
+  background-color: rgba(102, 126, 234, 0.05);
+  border-color: var(--primary);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.cell:not(.occupied):not(.disabled):active {
+  transform: scale(0.95);
+}
+
+.cell.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.cell.occupied {
+  cursor: not-allowed;
+}
+
+.cell-value {
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: block;
+}
+
+.cell-x .cell-value {
+  color: var(--primary);
+  animation: popIn 0.3s ease-out;
+}
+
+.cell-o .cell-value {
+  color: var(--secondary);
+  animation: popIn 0.3s ease-out;
+}
+
+.cell.winning {
+  background: linear-gradient(135deg, rgba(72, 187, 120, 0.2) 0%, rgba(72, 187, 120, 0.1) 100%);
+  border-color: var(--success);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.cell.winning .cell-value {
+  color: var(--success);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 8px rgba(72, 187, 120, 0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .game-board {
+    max-width: 100%;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .cell {
+    font-size: 2.5rem;
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-board {
+    gap: 0.375rem;
+    padding: 0.5rem;
+  }
+
+  .cell {
+    font-size: 2rem;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) {
+  .cell:not(.occupied):not(.disabled):hover {
+    transform: none;
+  }
+
+  .cell:not(.occupied):not(.disabled):active {
+    transform: scale(0.98);
+    background-color: rgba(102, 126, 234, 0.1);
+  }
+}
