@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/rabin/tictactoe/internal/auth"
 	"github.com/rabin/tictactoe/internal/game"
 	"github.com/rabin/tictactoe/internal/game/ai"
 	"github.com/rabin/tictactoe/internal/storage"
@@ -40,7 +41,7 @@ type MakeMoveRequest struct {
 // CreateGame handles game creation
 func (h *GameHandler) CreateGame(c *gin.Context) {
 	// Get user ID from context (set by auth middleware)
-	userID, exists := c.Get("user_id")
+	userID, exists := auth.GetUserID(c)
 	if !exists {
 		c.JSON(http.StatusUnauthorized, gin.H{
 			"error": "Unauthorized",
@@ -68,8 +69,7 @@ func (h *GameHandler) CreateGame(c *gin.Context) {
 	}
 
 	// Create new game
-	userIDInt := userID.(int64)
-	newGame := game.NewGame(userIDInt, game.Difficulty(req.Difficulty))
+	newGame := game.NewGame(int64(userID), game.Difficulty(req.Difficulty))
 
 	// Serialize board state
 	boardState, err := json.Marshal(newGame.Board.ToSlice())
@@ -82,7 +82,7 @@ func (h *GameHandler) CreateGame(c *gin.Context) {
 	}
 
 	// Save to database
-	dbGame, err := h.gameRepo.Create(int(userIDInt), req.Difficulty, boardState)
+	dbGame, err := h.gameRepo.Create(userID, req.Difficulty, boardState)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": "Failed to create game",
@@ -104,7 +104,7 @@ func (h *GameHandler) CreateGame(c *gin.Context) {
 
 // GetGame retrieves a game by ID
 func (h *GameHandler) GetGame(c *gin.Context) {
-	userID, exists := c.Get("user_id")
+	userID, exists := auth.GetUserID(c)
 	if !exists {
 		c.JSON(http.StatusUnauthorized, gin.H{
 			"error": "Unauthorized",
@@ -134,7 +134,7 @@ func (h *GameHandler) GetGame(c *gin.Context) {
 	}
 
 	// Check ownership
-	if dbGame.UserID != int(userID.(int64)) {
+	if dbGame.UserID != int(userID) {
 		c.JSON(http.StatusForbidden, gin.H{
 			"error": "You don't have permission to access this game",
 			"code":  "FORBIDDEN",
@@ -177,7 +177,7 @@ func (h *GameHandler) GetGame(c *gin.Context) {
 
 // MakeMove handles making a move in a game
 func (h *GameHandler) MakeMove(c *gin.Context) {
-	userID, exists := c.Get("user_id")
+	userID, exists := auth.GetUserID(c)
 	if !exists {
 		c.JSON(http.StatusUnauthorized, gin.H{
 			"error": "Unauthorized",
@@ -216,7 +216,7 @@ func (h *GameHandler) MakeMove(c *gin.Context) {
 	}
 
 	// Check ownership
-	if dbGame.UserID != int(userID.(int64)) {
+	if dbGame.UserID != int(userID) {
 		c.JSON(http.StatusForbidden, gin.H{
 			"error": "You don't have permission to access this game",
 			"code":  "FORBIDDEN",
@@ -368,7 +368,7 @@ func (h *GameHandler) MakeMove(c *gin.Context) {
 
 // ListGames lists all games for the authenticated user
 func (h *GameHandler) ListGames(c *gin.Context) {
-	userID, exists := c.Get("user_id")
+	userID, exists := auth.GetUserID(c)
 	if !exists {
 		c.JSON(http.StatusUnauthorized, gin.H{
 			"error": "Unauthorized",
@@ -377,7 +377,7 @@ func (h *GameHandler) ListGames(c *gin.Context) {
 		return
 	}
 
-	games, err := h.gameRepo.ListByUserID(int(userID.(int64)))
+	games, err := h.gameRepo.ListByUserID(int(userID))
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"error": "Failed to retrieve games",

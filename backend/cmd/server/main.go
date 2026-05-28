@@ -42,12 +42,15 @@ func main() {
 
 	// Initialize repositories
 	userRepo := storage.NewUserRepository(db.DB)
+	gameRepo := storage.NewGameRepository(db.DB)
 
 	// Initialize services
 	jwtService := auth.NewJWTService(cfg.JWT.Secret)
 
 	// Initialize handlers
 	authHandler := v1.NewAuthHandler(userRepo, jwtService)
+	gameHandler := v1.NewGameHandler(gameRepo, userRepo)
+	userHandler := v1.NewUserHandler(userRepo)
 
 	// Create Gin router
 	router := gin.Default()
@@ -101,21 +104,21 @@ func main() {
 		authRoutes.GET("/me", auth.AuthMiddleware(jwtService), authHandler.GetCurrentUser)
 	}
 
-	// TODO: Game routes (will be added in future phases)
-	// gameRoutes := router.Group("/api/v1/games")
-	// gameRoutes.Use(auth.AuthMiddleware(jwtService))
-	// {
-	//     gameRoutes.POST("", gameHandler.CreateGame)
-	//     gameRoutes.GET("/:id", gameHandler.GetGame)
-	//     gameRoutes.POST("/:id/move", gameHandler.MakeMove)
-	//     gameRoutes.GET("", gameHandler.ListGames)
-	// }
+	// API v1 routes - Games
+	gameRoutes := router.Group("/api/v1/games")
+	gameRoutes.Use(auth.AuthMiddleware(jwtService))
+	{
+		gameRoutes.POST("", gameHandler.CreateGame)
+		gameRoutes.GET("/:id", gameHandler.GetGame)
+		gameRoutes.POST("/:id/move", gameHandler.MakeMove)
+		gameRoutes.GET("", gameHandler.ListGames)
+	}
 
-	// TODO: User routes (will be added in future phases)
-	// userRoutes := router.Group("/api/v1/users")
-	// {
-	//     userRoutes.GET("/:id/stats", userHandler.GetStats)
-	// }
+	// API v1 routes - Users
+	userRoutes := router.Group("/api/v1/users")
+	{
+		userRoutes.GET("/:id/stats", userHandler.GetUserStats)
+	}
 
 	// Start server in goroutine
 	go func() {
@@ -132,6 +135,13 @@ func main() {
 	fmt.Printf("  - POST http://localhost:%s/api/v1/auth/register\n", cfg.Server.Port)
 	fmt.Printf("  - POST http://localhost:%s/api/v1/auth/login\n", cfg.Server.Port)
 	fmt.Printf("  - GET  http://localhost:%s/api/v1/auth/me (requires JWT)\n", cfg.Server.Port)
+	fmt.Printf("✓ Game endpoints:\n")
+	fmt.Printf("  - POST http://localhost:%s/api/v1/games (requires JWT)\n", cfg.Server.Port)
+	fmt.Printf("  - GET  http://localhost:%s/api/v1/games/:id (requires JWT)\n", cfg.Server.Port)
+	fmt.Printf("  - POST http://localhost:%s/api/v1/games/:id/move (requires JWT)\n", cfg.Server.Port)
+	fmt.Printf("  - GET  http://localhost:%s/api/v1/games (requires JWT)\n", cfg.Server.Port)
+	fmt.Printf("✓ User endpoints:\n")
+	fmt.Printf("  - GET  http://localhost:%s/api/v1/users/:id/stats\n", cfg.Server.Port)
 
 	// Wait for interrupt signal to gracefully shutdown the server
 	quit := make(chan os.Signal, 1)
