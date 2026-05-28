@@ -432,3 +432,6 @@
 - [ ] 35.7 Test deployment process end-to-end locally
 - [ ] 35.8 Create deployment checklist
 - [x] 35.9 Fix root `.env.example`: rename `VITE_API_URL` to `API_URL` to match the variable docker-compose passes as the `VITE_API_BASE_URL` build arg to the frontend container
+- [x] 35.10 Add Caddy reverse proxy service to `docker-compose.yml`: expose ports 80/443, mount Caddyfile, add `caddy_data` volume, remove host port bindings from `frontend` and `backend` so they are internal-only
+- [x] 35.11 Create `Caddyfile` in repo root using `{$CADDY_DOMAIN}` env var substitution so the domain is configurable without editing the file
+- [x] 35.12 Add `CADDY_DOMAIN` to `.env.example` (e.g. `CADDY_DOMAIN=tictactoe.54.1.2.3.nip.io`)
