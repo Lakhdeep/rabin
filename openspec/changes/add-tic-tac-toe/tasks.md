@@ -408,6 +408,7 @@
 - [ ] 33.6 Verify error messages don't leak sensitive information
 - [ ] 33.7 Test with intentionally malicious inputs
 - [ ] 33.8 Review code for security vulnerabilities
+- [x] 33.9 Fix CORS config: `AllowCredentials: true` + `AllowOrigins: ["*"]` is invalid per the CORS spec and browsers reject it — frontend uses `Authorization` header not cookies, so remove `AllowCredentials` and restrict `AllowOrigins` to actual deployment origin(s)
 
 ## 34. Performance & Optimization
 
@@ -430,3 +431,4 @@
 - [ ] 35.6 Add resource limits to docker-compose (memory, CPU)
 - [ ] 35.7 Test deployment process end-to-end locally
 - [ ] 35.8 Create deployment checklist
+- [x] 35.9 Fix root `.env.example`: rename `VITE_API_URL` to `API_URL` to match the variable docker-compose passes as the `VITE_API_BASE_URL` build arg to the frontend container

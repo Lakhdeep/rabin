@@ -58,14 +58,13 @@ func main() {
 	// Add recovery middleware (catches panics)
 	router.Use(gin.Recovery())
 
-	// Add CORS middleware (allow all origins in development)
+	// Add CORS middleware — origins configured via CORS_ALLOWED_ORIGINS env var
 	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"*"},
-		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
-		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
-		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: true,
-		MaxAge:           12 * time.Hour,
+		AllowOrigins:  cfg.Server.CORSAllowedOrigins,
+		AllowMethods:  []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowHeaders:  []string{"Origin", "Content-Type", "Authorization"},
+		ExposeHeaders: []string{"Content-Length"},
+		MaxAge:        12 * time.Hour,
 	}))
 
 	// Add request logging middleware

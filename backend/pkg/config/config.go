@@ -2,6 +2,7 @@ package config
 
 import (
 	"os"
+	"strings"
 )
 
 // Config holds all application configuration
@@ -27,7 +28,8 @@ type JWTConfig struct {
 
 // ServerConfig holds server configuration
 type ServerConfig struct {
-	Port string
+	Port               string
+	CORSAllowedOrigins []string
 }
 
 // Load loads configuration from environment variables
@@ -44,7 +46,8 @@ func Load() *Config {
 			Secret: getEnv("JWT_SECRET", "your-super-secret-jwt-key-change-this-in-production"),
 		},
 		Server: ServerConfig{
-			Port: getEnv("PORT", "8080"),
+			Port:               getEnv("PORT", "8080"),
+			CORSAllowedOrigins: strings.Split(getEnv("CORS_ALLOWED_ORIGINS", "http://localhost"), ","),
 		},
 	}
 }
