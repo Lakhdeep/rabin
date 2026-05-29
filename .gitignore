@@ -26,3 +26,5 @@ postgres_data/
 
 # AI
 .opencode/
+.claude/
+docker-compose.override.yml

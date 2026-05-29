@@ -10,7 +10,7 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/rabin/tictactoe/internal/api/v1"
+	v1 "github.com/rabin/tictactoe/internal/api/v1"
 	"github.com/rabin/tictactoe/internal/auth"
 	"github.com/rabin/tictactoe/internal/storage"
 	"github.com/rabin/tictactoe/pkg/config"
@@ -59,13 +59,14 @@ func main() {
 	router.Use(gin.Recovery())
 
 	// Add CORS middleware — origins configured via CORS_ALLOWED_ORIGINS env var
-	router.Use(cors.New(cors.Config{
+	corsConfig := cors.Config{
 		AllowOrigins:  cfg.Server.CORSAllowedOrigins,
 		AllowMethods:  []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:  []string{"Origin", "Content-Type", "Authorization"},
 		ExposeHeaders: []string{"Content-Length"},
 		MaxAge:        12 * time.Hour,
-	}))
+	}
+	router.Use(cors.New(corsConfig))
 
 	// Add request logging middleware
 	router.Use(func(c *gin.Context) {
